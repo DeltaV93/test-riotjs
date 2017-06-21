@@ -1,0 +1,5 @@
+{
+   "endpoint": "http://bower.herokuapp.com",
+   "directory": "node_modules/bower_components/",
+   "strict-ssl": false
+}
