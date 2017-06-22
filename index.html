@@ -7,11 +7,15 @@
 	<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>   -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">	
 	<!-- Polyfills cdn that loads based on the browser the user is using -->
-	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
-	<script src="todo.tag" type="riot/tag"></script>
+	<script src="http://cdn.polyfill.io/v2/polyfill.min.js"></script> 
 </head>
 <body>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/riot/3.6.0/riot+compiler.min.js"></script>
+	 
+	<script src="components/layout/topnav/topnav.js" type="riot/tag"></script>
 	<h1>Hello world</h1>
-	<todo></todo>
+	<my-topnav></my-topnav>
+
+	<script>riot.mount('my-topnav')</script>
 </body>
 </html>
