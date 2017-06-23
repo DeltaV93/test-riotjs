@@ -18,5 +18,8 @@ https://www.theguardian.com/lifeandstyle/gallery/2016/nov/12/70s-dinner-party-fo
 
 https://www.bettycrocker.com/menus-holidays-parties/mhplibrary/parties-and-get-togethers/70s-theme-party-retro-food-recipes
 
-
 https://www.theguardian.com/lifeandstyle/gallery/2016/nov/12/70s-dinner-party-food-in-pictures (DOUBLE WOW)
+
+##########################################
+Css Ref 
+https://googlechrome.github.io/samples/css-custom-properties/index.html

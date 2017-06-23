@@ -1,0 +1,37 @@
+var athena = athena || {};
+athena.SlideOutPanel = (function () {
+  var validator;
+  var init = function () {
+      $("#add-note-btn").on("click",function() {
+        $("#add-note-panel").jqSlideOutPanel("open");
+      })
+
+      $("#note-cancel-btn").on("click",function() {
+        $("#add-note-panel").jqSlideOutPanel("close");
+      })
+
+      //initialize left panel 
+      $('#nav-panel').jqSlideOutPanel({
+        position:"left",
+        width:"200px",
+        action:"push"
+      });
+
+      //initialize right panel
+      $('#add-note-panel').jqSlideOutPanel({
+        position:"right",
+        action:"overlay",
+        showToggle:false,
+        showCloseIcon:true,
+        sliderClosedCallback: function () {
+          alert("Panel Closed")
+        },
+        sliderOpenedCallback: function () {
+          alert("Panel Opened")
+        }
+      });    
+  }
+  return {
+    init:init
+  }
+}());

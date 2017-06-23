@@ -3,19 +3,43 @@
 <head>
 	<title>Riot | Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <script src="http://cdn.zic.pri/jslibs/jquery/2.1.4/jquery-2.1.4.min.js"></script>          -->
-	<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>   -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">	
-	<!-- Polyfills cdn that loads based on the browser the user is using -->
+	<!-- Polyfills cdn that loads based on the browser the user is using giphy stickers-->
 	<script src="http://cdn.polyfill.io/v2/polyfill.min.js"></script> 
+
+	<link rel="stylesheet" href="src/css/lib/boostrap/4.0.0-alpha.6/bootstrap.min.css">
+
+	<script src="src/scripts/lib/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>	
 </head>
 <body>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/riot/3.6.0/riot+compiler.min.js"></script>
-	 
-	<script src="components/layout/topnav/topnav.js" type="riot/tag"></script>
-	<h1>Hello world</h1>
-	<my-topnav></my-topnav>
+	<top-nav></top-nav>
 
-	<script>riot.mount('my-topnav')</script>
+	<side-nav></side-nav>
+
+	<h1>Hello world</h1>
+	<button id="add-note-btn" class="btn btn-danger">Open Right Panel</button>
+
+    <!-- scripts we need -->
+    <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.min.js"></script>
+
+	<!-- riot tags -->
+	<script src="components/layout/top-nav/top-nav.tag" type="riot/tag"></script>
+	<script src="components/layout/side-nav/side-nav.tag" type="riot/tag"></script>
+
+	<!-- <script src="topnav.tag" type="riot/tag"></script>					 -->
+
+	 
+	<!-- <script src="topnav.tag" type="riot/tag"></script> -->
+
+	<script>
+		riot.compile(function() {
+		    riot.mount('*', {
+		    	logo: 'Test Logo'
+		    })
+		})
+
+    </script>
 </body>
 </html>

@@ -19,8 +19,10 @@ var gulp = require('gulp'),
 	dataTablesDir = bowerDir + 'datatables.net/dist/',
 	fullcalendarDir = bowerDir + 'fullcalendar/dist/js/';
 	jqueryValidationDir = bowerDir + 'jquery-validation/';
+	riotDir = bowerDir + 'riot/';
+	boostrapDir = bowerDir + 'bootstrap/';
 
-
+// /node_modules/bower_components/bootstrap/scss
 //
 // COPY REQUIRED GULP FILES INTO SRC DIR
 //
@@ -34,8 +36,20 @@ gulp.task('copy', function(){
 		dragulaDir + 'dragula.min.js',
 		dataTablesDir + 'js/jquery.dataTables.min.js',
 		fullcalendarDir + 'fullcalendar.min.js',
+		riotDir + 'riot+compiler.js',
+		boostrapDir + 'dist/js/**.js',
 	])
 		.pipe(gulp.dest('src/scripts/lib'));
+	// Copy style files
+	gulp.src([
+		boostrapDir + 'dist/css/*.css',
+	])
+		.pipe(gulp.dest('src/css/lib/boostrap/4.0.0-alpha.6/'));
+	// // Copy sass files
+	gulp.src([
+		boostrapDir + 'scss/**/*.scss',
+	])
+		.pipe(gulp.dest('src/sass/boostrap/4.0.0-alpha.6/'));
 });
 
 gulp.task('scripts', function (cb) {
@@ -80,8 +94,8 @@ gulp.task('default', ['sass', 'images'], function(){
 		serverStatic: 'public',
 		files: '/src',
 	});
-	gulp.watch(['src/sass/*.scss','src/sass/themes/pro/**/*.scss','src/sass/themes/estify/**/*.scss'], ['sass']);
+	gulp.watch(['src/sass/*.scss'], ['sass']);
 	gulp.watch('src/img/**/*', ['images']);
 	gulp.watch('src/scripts/*.js', ['scripts']);
-	gulp.watch('*.**', browserSync.reload);
+	gulp.watch(['**/*.**','components/***/**.*'], browserSync.reload);
 });

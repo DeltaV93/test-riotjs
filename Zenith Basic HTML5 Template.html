@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://zenithui/starter-kit/html/pages/html/off-canvas-panel.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zenith Basic HTML5 Template</title>
+
+    <link href="./Zenith Basic HTML5 Template_files/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Zenith Basic HTML5 Template_files/jquery.slideoutpanel.css">
+    <script src="./Zenith Basic HTML5 Template_files/jquery-2.1.3.min.js.download"></script>
+    <script src="./Zenith Basic HTML5 Template_files/bootstrap.min.js.download"></script>
+    <script src="./Zenith Basic HTML5 Template_files/jquery.slideoutpanel.js.download"></script>
+    <script src="./Zenith Basic HTML5 Template_files/off-canvas-panel.js.download"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      athena.SlideOutPanel.init();
+    });
+    </script>
+
+  <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+  <body cz-shortcut-listen="true" style="margin-left: 200px;">
+<div class="container-fluid">
+
+
+
+      <h1>Off Canvas Panel</h1>
+      <p>The contents of any <code>div</code> can be put into a slide out panel.</p>
+
+      <h3>To initialize:</h3>
+      <pre>        <code>
+            $('#divid').jqSlideOutPanel();
+        </code>
+      </pre>
+
+      <h3>Settings</h3>
+      <pre>        <code>
+            $('#divid').jqSlideOutPanel({
+              position:"left",
+              width:"200px",
+              action:"push"            
+            });
+        </code>
+      </pre>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Type</th>
+            <th>Values</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>position</td>
+            <td>String</td>
+            <td>"left","right"</td>
+            <td>"right"</td>
+            <td>Determines the side of the screen the panel will be displayed</td>
+          </tr>
+          <tr>
+            <td>action</td>
+            <td>String</td>
+            <td>"push", "overlay"</td>
+            <td>"push"</td>
+            <td>Push: Adjust the content of the screen to accomodate the panel.<br>Overlay: Slides panel on top of content.</td>
+          </tr>
+          <tr>
+            <td>width</td>
+            <td>String</td>
+            <td>can use px or %</td>
+            <td>"350px"</td>
+            <td>Initial width of panel when open.  Can use either px or %.</td>
+          </tr>
+          <tr>
+            <td>showToggle</td>
+            <td>Boolean</td>
+            <td>true | false</td>
+            <td>true</td>
+            <td>Displays tab to toggle panel open and closed.</td>
+          </tr>
+          <tr>
+            <td>animateSpeed</td>
+            <td>Number</td>
+            <td>0-2000</td>
+            <td>200</td>
+            <td>The speed that the panel opens and closes. i.e. 1000 = 1 second</td>
+          </tr>
+          <tr>
+            <td>showCloseIcon</td>
+            <td>Boolean</td>
+            <td>true | false</td>
+            <td>false</td>
+            <td>Displays a clickable "X" in the top corner of the slide out panel, which closes the panel. </td>
+          </tr>
+          <tr>
+            <td>sliderOpenCallback</td>
+            <td>Function</td>
+            <td></td>
+            <td>null</td>
+            <td>function called after panel is open</td>
+          </tr>
+          <tr>
+            <td>sliderClosedCallback</td>
+            <td>Function</td>
+            <td></td>
+            <td>null</td>
+            <td>function called after panel is closed</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Methods</h3>
+      <pre>        Example:
+        Open overlay panel on the right.
+        <code>
+          $("#add-note-panel").jqSlideOutPanel("open");
+        </code>
+        <button id="add-note-btn" class="btn btn-danger">Open Right Panel</button>
+      </pre>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>open</td>
+            <td>opens the slider</td>
+          </tr>
+          <tr>
+            <td>close</td>
+            <td>closes the slider</td>
+          </tr>
+          <tr>
+            <td>showToggle</td>
+            <td>shows the toggle icon</td>
+          </tr>
+          <tr>
+            <td>hideToggle</td>
+            <td>hides the toggle button</td>
+          </tr>
+          <tr>
+            <td>showCloseIcon</td>
+            <td>show the close icon at the top of the slide out panel</td>
+          </tr>
+          <tr>
+            <td>hideCloseIcon</td>
+            <td>hide the close icon at the top of the slide out panel</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Example:</h3>
+      <p>Click on the arrow tab on the left side of screen.</p>
+      <pre>          <h4>JavaScript:</h4>
+          <code>
+            $("#add-note-btn").on("click",function() {
+              $("#add-note-panel").jqSlideOutPanel("open");
+            });
+
+            $("#note-cancel-btn").on("click",function() {
+              $("#add-note-panel").jqSlideOutPanel("close");
+            });
+
+            //initialize left panel
+            $('#nav-panel').jqSlideOutPanel({
+              position:"left",
+              width:"200px",
+              action:"push"
+            });
+
+            //initialize right panel
+            $('#add-note-panel').jqSlideOutPanel({
+              position:"right",
+              action:"overlay",
+              showToggle:false,
+              showCloseIcon:true,
+              sliderClosedCallback: function () {
+                alert("Panel Closed")
+              },
+              sliderOpenedCallback: function () {
+                alert("Panel Opened")
+              }
+            });      
+          </code>
+
+          <h4>HTML:</h4>
+          <code>
+            &lt;div id="add-note-panel"&gt;
+              &lt;div style="padding:10px;"&gt;
+              &lt;form&gt;
+                &lt;h2&gt;Create Note&lt;/h2&gt;
+                &lt;label&gt;Note Title&lt;/label&gt;
+                &lt;input type="text" class="form-control" name="note-title"&gt;
+                &lt;label&gt;Note Type&lt;/label&gt;
+                &lt;select id="note-type" class="form-control"&gt;&lt;/select&gt;
+                &lt;label&gt;Note&lt;/label&gt;
+                &lt;textarea class="form-control"&gt;&lt;/textarea&gt;
+                &lt;div class="row" style="margin-top:30px;"&gt;
+                    &lt;div class="col-xs-6"&gt;
+                      &lt;button type="button" id="note-cancel-btn" class="btn btn-default btn-block"&gt;Cancel&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-xs-6"&gt;
+                      &lt;button type="button" class="btn btn-primary btn-block"&gt;Save&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/form&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div id="nav-panel"&gt;
+              &lt;div class="bs-example" data-example-id="simple-nav-stacked"&gt; 
+                &lt;ul class="nav nav-pills nav-stacked nav-pills-stacked-example"&gt; 
+                  &lt;li role="presentation" class="active"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt; 
+                  &lt;li role="presentation"&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt; 
+                  &lt;li role="presentation"&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt; 
+                &lt;/ul&gt; 
+              &lt;/div&gt;     
+            &lt;/div&gt;
+          </code>
+      </pre>
+
+</div>
+
+    
+
+    
+
+  
+
+<div class="jq-slide-out-panel-container jq-slide-out-panel-left" style="width: 200px; left: 0px;" is-open="true"><div id="nav-panel" class="jq-slide-out-panel-content-wrapper"><div class="jq-slide-out-panel-close-icon-container" style="display: none;"><div class="jq-slide-out-panel-close-icon jq-slide-out-panel-close-icon-left"></div></div>
+      <div class="bs-example" data-example-id="simple-nav-stacked"> 
+        <ul class="nav nav-pills nav-stacked nav-pills-stacked-example"> 
+          <li role="presentation" class="active"><a href="http://zenithui/starter-kit/html/pages/html/off-canvas-panel.html#">Home</a></li> 
+          <li role="presentation"><a href="http://zenithui/starter-kit/html/pages/html/off-canvas-panel.html#">Profile</a></li> 
+          <li role="presentation"><a href="http://zenithui/starter-kit/html/pages/html/off-canvas-panel.html#">Messages</a></li> 
+        </ul> 
+      </div>     
+    </div><div class="jq-slide-out-panel-toggle jq-slide-out-panel-toggle-left"><span class="jq-slide-out-panel-toggle-arrow toggle-arrow-left">&nbsp;</span></div></div><div class="jq-slide-out-panel-container jq-slide-out-panel-right" style="width: 350px; right: -350px;" is-open="false"><div id="add-note-panel" class="jq-slide-out-panel-content-wrapper"><div class="jq-slide-out-panel-close-icon-container"><div class="jq-slide-out-panel-close-icon jq-slide-out-panel-close-icon-right"></div></div>
+      <div style="padding:10px;">
+      <form>
+        <h2>Create Note</h2>
+        <label>Note Title</label>
+        <input type="text" class="form-control" name="note-title">
+        <label>Note Type</label>
+        <select id="note-type" class="form-control"></select>
+        <label>Note</label>
+        <textarea class="form-control"></textarea>
+        <div class="row" style="margin-top:30px;">
+            <div class="col-xs-6">
+              <button type="button" id="note-cancel-btn" class="btn btn-default btn-block">Cancel</button>
+            </div>
+            <div class="col-xs-6">
+              <button type="button" class="btn btn-primary btn-block">Save</button>
+            </div>
+        </div>
+      </form>
+      </div>
+    </div><div class="jq-slide-out-panel-toggle jq-slide-out-panel-toggle-right" style="display: none;"><span class="jq-slide-out-panel-toggle-arrow toggle-arrow-left">&nbsp;</span></div></div></body></html>
